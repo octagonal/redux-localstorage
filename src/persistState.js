@@ -51,9 +51,7 @@ export default function persistState(paths, config) {
       const subset = slicerFn(state);
       try {
         storageProvider.setItem(key, serialize(subset)).then(() => {
-          storageProvider.getItem(key).then(resp => {
-            console.log(resp);
-          });
+          storageProvider.getItem(key).then((resp) => resp);
         })
 
       } catch (e) {
